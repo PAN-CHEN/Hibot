@@ -1,0 +1,14 @@
+前进，#{"linear": {"x": 0.1},"angular":{"z":0}}
+向前走，#{"linear": {"x": 0.1},"angular":{"z":0}}
+向前，#{"linear": {"x": 0.1},"angular":{"z":0}}
+像前走，#{"linear": {"x": 0.1},"angular":{"z":0}}
+钱，#{"linear": {"x": 0.1},"angular":{"z":0}}
+钱静，#{"linear": {"x": 0.1},"angular":{"z":0}}
+前景，#{"linear": {"x": 0.1},"angular":{"z":0}}
+右转，#{"linear": {"x": 0.1},"angular": {"z": -0.3}}
+有种，#{"linear": {"x": 0.1},"angular": {"z": -0.3}}
+左转，#{"linear": {"x": 0.1},"angular": {"z": 0.3}}
+后退，#{"linear": {"x": -0.1},"angular":{"z":0}}
+厚涂，#{"linear": {"x": -0.1},"angular":{"z":0}}
+停止，#{"linear": {"x": 0},"angular":{"z":0}}
+婷，#{"linear": {"x": 0},"angular":{"z":0}}

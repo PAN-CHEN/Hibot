@@ -28,8 +28,9 @@ public class Sample {
 	private static final String cuid = "E0-06-E6-F3-7D-6D";
 
 	private static String filePath = "";
-
 	static VoiceNav spe = new VoiceNav();
+	static boolean change;
+	
 	private static void getToken() throws Exception {
 		String getTokenURL = "https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials"
 				+ "&client_id=" + apiKey + "&client_secret=" + secretKey;
@@ -47,24 +48,31 @@ public class Sample {
 		speechToMove(resultString);
 
 	}
-
+	   public void rosConnect(String text){
+		   
+		   if(text.equals("连接，")){
+			  System.out.println("请输入连接的ros号码：  一号或者二号");
+		   }
+	   }
 	public static void speechToMove(String resultString) throws Exception {
 		// json转换java map对象
 		Map<String, String> map = new JsonToJava()
 				.getJsonToHashMap(resultString.toString());
-
+	
+   
 		// 获取result对应的value值，字符串输出
-        final String cmd = map.get("result");
+        final String text = map.get("result");
 	    //	final String cmd="向右转，";
-		System.out.println("打印结果：Json to Map： \t" + cmd);
-		//VoiceNav spe = new VoiceNav();
-		spe.move(cmd);
-		/*new Thread() {//星期五19：23注释
-			public void run() {
-				VoiceNav spe = new VoiceNav();
-				spe.move(cmd);
-			}
-		}.start();*/
+		System.out.println("打印百度云识别结果：Json to Map： \t" + text);//cmd : 向前走
+		 if(text.equals("连接，")||text.equals("联机，")){
+			  System.out.println("请输入连接的ros号码：  一号或者二号");
+			 change = true;
+			  return ;
+		   }else {
+			   spe.textToCmd(text,change);
+			   change = false;
+		   }
+		
 	}
 
 	private static String upload() throws Exception {

@@ -27,7 +27,7 @@ public class UPloadAction extends ActionSupport implements 	ServletResponseAware
 	private HttpServletResponse response;
 
 	public void doAction() {
-		System.out.println("上传的文件=" + files.size());//客户端只储存一条语音命令。
+		System.out.println("上传的文件数量：" + files.size());//客户端只储存一条语音命令。
 		//2.打印文件名
 		for (File f : files)
 			System.out.println(f.getName());
@@ -54,7 +54,7 @@ public class UPloadAction extends ActionSupport implements 	ServletResponseAware
 					+ FileUtil.getExtensionName(uploadPaths.get(i));
 			pathsReal[i] = StaticValues.PATH_ATTACH + "/" + name;
 			
-			System.out.println(pathsReal[i] +"\t"+i);//4.打印文件实际存储路径 i始终都是0，只有一个文件上传
+			System.out.println("文件实际存储路径：" + pathsReal[i] );//4.打印文件实际存储路径 i始终都是0，只有一个文件上传
 			FileUtil.copyFile(oldPath, pathsReal[i]);
 			
 			//调用百度云，语音识别
